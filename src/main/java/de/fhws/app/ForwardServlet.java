@@ -15,9 +15,7 @@ public class ForwardServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		int calc = 42/2;
-				
+					
 		System.out.println("bin da");
 		req.getRequestDispatcher("/qp").forward(req, resp);
 		
