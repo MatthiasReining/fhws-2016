@@ -1,4 +1,4 @@
-package de.fhws.app;
+package de.fhws.app.presentation.showcase;
 
 import java.io.IOException;
 import java.util.Date;

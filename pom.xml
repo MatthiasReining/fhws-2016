@@ -14,6 +14,15 @@
 			<version>7.0</version>
 			<scope>provided</scope>
 		</dependency>
+
+		<!-- included only to avoid warnings in eclipse
+  			 see http://stackoverflow.com/questions/5987908/how-to-resolve-can-not-find-the-tag-library-descriptor-for-http-java-sun-co -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 	<properties>
 		<maven.compiler.source>1.7</maven.compiler.source>
@@ -22,7 +31,7 @@
 	</properties>
 
 	<build>
-	<finalName>${project.artifactId}</finalName>
+		<finalName>${project.artifactId}</finalName>
 	</build>
 
 </project>
