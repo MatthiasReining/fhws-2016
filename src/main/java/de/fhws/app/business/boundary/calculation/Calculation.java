@@ -8,6 +8,8 @@ public class Calculation {
 		if (param > 100)
 			param = 99;
 		
-		return 42.0 / param;
+		double v =  42 / param;
+		
+		return v;
 	}
 }
