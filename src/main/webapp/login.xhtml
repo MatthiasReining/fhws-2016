@@ -11,6 +11,8 @@
 	<f:view>
             
             <h:form id="loginForm">
+                <h:message id="loginMsg"/>
+                
                 <h:panelGrid id="grid" columns="2">
                     <h:outputLabel value="Email" for="email"/>
                     <h:inputText id="email" value="#{loginController.email}"/>
