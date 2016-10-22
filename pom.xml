@@ -46,4 +46,14 @@
 		<finalName>${project.artifactId}</finalName>
 	</build>
 
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>javancss-maven-plugin</artifactId>
+				<version>2.1</version>
+			</plugin>
+		</plugins>
+	</reporting>
 </project>
