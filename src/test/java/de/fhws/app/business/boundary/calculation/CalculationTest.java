@@ -29,4 +29,18 @@ public class CalculationTest {
 		Assert.assertEquals(21.0, result, 0.001);
 		
 	}
+	
+	@Test
+	public void shouldCalculate3() {		
+		double result = cut.calc(4); 
+		Assert.assertEquals(21.0, result, 0.001);
+		
+	}
+	
+	@Test
+	public void shouldCalculate4() {		
+		double result = cut.calc(0); 
+		Assert.assertEquals(21.0, result, 0.001);
+		
+	}
 }
