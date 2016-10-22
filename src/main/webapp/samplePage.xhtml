@@ -9,19 +9,20 @@
 </h:head>
 <h:body>
 	<f:view>
-
-
+           
 		<h:form id="form">
-			<h:panelGrid id="grid" columns="2">
+			<h:panelGrid id="grid" columns="3">
 				<h:outputLabel value="Data1" />
 				<h:inputText id="data1" value="#{sampleController.data1}">
 				</h:inputText>
+                                <h:message for="data1"/>
 
-				<h:outputLabel value="Data1" />
-				<h:inputText value="#{sampleController.data2}" >
+				<h:outputLabel value="Data2" />
+				<h:inputText id="data2" value="#{sampleController.data2}" >
                                     <f:validateRequired/>
                                     <f:validateRegex pattern="\d*"/>
                                 </h:inputText>
+                                <h:message for="data2"/>
 
 			</h:panelGrid>
 
