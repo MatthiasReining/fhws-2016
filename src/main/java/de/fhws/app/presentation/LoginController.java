@@ -25,7 +25,7 @@ public class LoginController {
 		}
 
 		FacesMessage message = new FacesMessage("Login fehlgeschlagen!");
-		FacesContext.getCurrentInstance().addMessage("loginForm:loginMsg", message);
+		FacesContext.getCurrentInstance().addMessage("loginMsg", message);
 		
 		return "login";
 
