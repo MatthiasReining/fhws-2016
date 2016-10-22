@@ -3,7 +3,7 @@ Java EE - Full Stack for Business Applications
 
 by [Matthias Reining](https://twitter.com/MatthiasReining) at FHWS (Hochschule fÃ¼r angewandte Wissenschaften WÃ¼rzburg-Schweinfurt)
 
-FWMP: 12 SWS
+FWPM: 12 SWS
 
 
 The Course
@@ -12,7 +12,7 @@ The Course
 
 **Learning Objective:**
 
-> Den Teilnehmern der Vorlesung werden die Grundlagen der Java Enterprise Edition vermittelt. Die Studierenden lernen den Aufbau und die Funktionsweise eines Application Servers kennen. Der Schwerpunkt der Veranstaltung liegt primÃ¤r bei den APIs der Java EE Spezifikation mit denen sich Unternehmensanwendungen erstellen lassen. Hierbei erlernen die Studierenden wie man Front-Ends, Web Services, Business Logic und Datenpersistenz auf Basis der Java EE entwickelt. Im Rahmen einer Beispielanwendung werden die Konzepte gÃ¤ngiger Software-Patterns vermittelt und aufgezeigt welche LÃ¶sungen die Java EE hierfÃ¼r anbietet. Weiterhin erlangen die Teilnehmer einen Einblick in gÃ¤ngige Build-Techniken bei Java EE Softwareprojekten
+> Den Teilnehmern der Vorlesung werden die Grundlagen der Java Enterprise Edition vermittelt. Die Studierenden lernen den Aufbau und die Funktionsweise eines Application Servers kennen. Der Schwerpunkt der Veranstaltung liegt primär bei den APIs der Java EE Spezifikation mit denen sich Unternehmensanwendungen erstellen lassen. Hierbei erlernen die Studierenden wie man Front-Ends, Web Services, Business Logic und Datenpersistenz auf Basis der Java EE entwickelt. Im Rahmen einer Beispielanwendung werden die Konzepte gängiger Software-Patterns vermittelt und aufgezeigt welche Lösungen die Java EE hierfür anbietet. Weiterhin erlangen die Teilnehmer einen Einblick in gängige Build-Techniken bei Java EE Softwareprojekten
 
 **Slides**
 
