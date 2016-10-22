@@ -1,4 +1,4 @@
-package de.fhws.app.business.boundary.calculation;
+package de.fhws.app.business.calculation.boundary;
 
 public class Calculation {
 

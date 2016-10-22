@@ -19,8 +19,8 @@ public class SessionListener implements HttpSessionListener, HttpSessionAttribut
 
 	@Override
 	public void sessionDestroyed(HttpSessionEvent se) {
-		int count = (int) se.getSession().getAttribute("counter");
-		System.out.println("Die Session hatte " + count + " counts");
+		//int count = (int) se.getSession().getAttribute("counter");
+		//System.out.println("Die Session hatte " + count + " counts");
 		System.out.println("Die Session wurde angelegt um " + se.getSession().getAttribute("createTime"));
 		System.out.println("session wird gelöscht");
 	}

@@ -1,8 +1,9 @@
-package de.fhws.app.business.boundary.calculation;
+package de.fhws.app.business.calculation.boundary;
 
 import org.junit.Before;
 import org.junit.Test;
 
+import de.fhws.app.business.calculation.boundary.Calculation;
 import junit.framework.Assert;
 
 public class CalculationTest {

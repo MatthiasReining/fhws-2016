@@ -3,7 +3,7 @@ package de.fhws.app.presentation.frontcontroller.commands;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import de.fhws.app.business.boundary.calculation.Calculation;
+import de.fhws.app.business.calculation.boundary.Calculation;
 import de.fhws.app.presentation.frontcontroller.Command;
 
 public class ComplexCalculationCommand implements Command{
