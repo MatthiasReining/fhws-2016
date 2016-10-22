@@ -20,7 +20,7 @@ public class FirefoxBlockFilter implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
-		System.out.println("im Filter vor Servlet");
+		//System.out.println("im Filter vor Servlet");
 		
 		if (((HttpServletRequest)request).getHeader("User-Agent").toLowerCase().contains("firefox")) {
 			//Firefox browser
@@ -32,7 +32,7 @@ public class FirefoxBlockFilter implements Filter {
 		chain.doFilter(request, response);
 		
 		
-		System.out.println("im Filter nach Servlet");
+		//System.out.println("im Filter nach Servlet");
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {
