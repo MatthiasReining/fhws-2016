@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="./WEB-INF/templates/template.xhtml">
+
+	<ui:define name="content">
+
+		<f:view>
+
+
+			<h2>Benutzer #{appUserController.appUser.lastname}</h2>
+
+
+			<h:form>
+
+				Email
+				<h:inputText value="#{appUserController.appUser.email}" />
+				<br/>
+				password				
+				<h:inputText value="#{appUserController.appUser.password}" />
+				<br/>
+				firstname				
+				<h:inputText value="#{appUserController.appUser.firstname}" />
+				<br/>
+				lastname
+				<h:inputText value="#{appUserController.appUser.lastname}" />
+				<br/>
+				uuid 
+				#{appUserController.appUser.id}
+	
+				<hr/>
+				
+				<h:commandButton action="#{appUserController.save()}" value="save" />
+
+
+			</h:form>
+
+		</f:view>
+
+
+	</ui:define>
+
+</ui:composition>

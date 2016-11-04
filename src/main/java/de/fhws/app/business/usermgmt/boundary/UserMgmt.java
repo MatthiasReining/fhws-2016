@@ -17,4 +17,8 @@ public class UserMgmt {
 		return dbmock.getAllUsers();
 	}
 
+	
+	public void save(AppUser appUser) {		
+		dbmock.save(appUser);
+	}
 }

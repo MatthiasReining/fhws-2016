@@ -13,10 +13,22 @@ public class DBMock {
 		users.add(new AppUser("daisy.duck@disney.com", "geheim", "Daisy", "Duck"));
 
 	}
+	
+	public void save(AppUser appUser) {
+		for(AppUser au: users) {
+			if (au.getId().equals(appUser.getId())) {
+				au.setEmail(appUser.getEmail());
+				au.setFirstname(appUser.getFirstname());
+				au.setLastname(appUser.getLastname());
+				au.setPassword(appUser.getPassword());
+			}
+		}
+	}
 
 	public List<AppUser> getAllUsers() {
 		return users;
 	}
+	
 
 	public AppUser getUserByEmail(String email) {
 

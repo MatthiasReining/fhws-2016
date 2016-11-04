@@ -8,22 +8,30 @@
 	<ui:define name="content">
 
 		<f:view>
-		
-		
-			<h2>Benutzerliste</h2>
-			
 
-			<h:dataTable value="#{appUserListController.allUsers}" var="appUser">
-				<h:column>
-					<h:outputText value="#{appUser.firstname}" />
-				</h:column>
-				<h:column>
-					<h:outputText value="#{appUser.lastname}" />
-				</h:column>
-				<h:column>
-					<h:outputText value="#{appUser.email}" />
-				</h:column>
-			</h:dataTable>
+
+			<h2>Benutzerliste</h2>
+
+
+			<h:form>
+
+				<h:dataTable value="#{appUserListController.allUsers}" var="appUser">
+					<h:column>
+						<h:outputText value="#{appUser.firstname}" />
+					</h:column>
+					<h:column>
+						<h:outputText value="#{appUser.lastname}" />
+					</h:column>
+					<h:column>
+						<h:outputText value="#{appUser.email}" />
+					</h:column>
+					<h:column>
+						<h:commandButton action="#{appUserController.load(appUser)}"
+							value="edit" />
+					</h:column>
+				</h:dataTable>
+
+			</h:form>
 
 		</f:view>
 
