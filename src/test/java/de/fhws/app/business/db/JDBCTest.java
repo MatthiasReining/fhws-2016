@@ -179,7 +179,12 @@ public class JDBCTest {
 
 		pstmt.executeUpdate();
 
+		try {
 		System.out.println(42 / 0);
+		} catch(Exception e) {
+			connection.rollback();
+			return;
+		}
 
 		connection.commit();
 
