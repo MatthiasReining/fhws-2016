@@ -24,6 +24,7 @@ public class LoginController {
 				return "appuser-list?faces-redirect=true";
 		}
 
+
 		FacesMessage message = new FacesMessage("Login fehlgeschlagen!");
 		FacesContext.getCurrentInstance().addMessage("loginMsg", message);
 		
