@@ -2,15 +2,11 @@ package de.fhws.app.presentation;
 
 import java.io.Serializable;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
+import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.transaction.UserTransaction;
 
 import de.fhws.app.business.usermgmt.boundary.UserMgmt;
 import de.fhws.app.business.usermgmt.entity.AppUser;
@@ -20,19 +16,10 @@ import de.fhws.app.business.usermgmt.entity.AppUser;
 public class LoginController implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@PersistenceContext
-	EntityManager em;
-
-	@Resource
-	UserTransaction tx;
-
+	@EJB
 	UserMgmt um;
 
-	@PostConstruct
-	public void init() {
-		um = new UserMgmt(em, tx);
-	}
-
+	
 	private String email;
 	private String password;
 	
