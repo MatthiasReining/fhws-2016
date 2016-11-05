@@ -51,8 +51,7 @@ public class UserMgmt {
 
 			EventLog el = new EventLog();
 			el.setEvent("LOGIN");
-
-			el = em.merge(el);
+			el.setAppUser(dbUser);
 
 			List<EventLog> events = dbUser.getEvents();
 			if (events == null) {

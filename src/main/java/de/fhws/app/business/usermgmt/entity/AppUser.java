@@ -3,10 +3,11 @@ package de.fhws.app.business.usermgmt.entity;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -37,8 +38,7 @@ public class AppUser {
 	private Date lastLogin;
 	private int numberOfLoginFailed;
 	
-	@OneToMany
-	@JoinColumn(name="APPUSER_ID")
+	@OneToMany(mappedBy="appUser", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private List<EventLog> events;
 
 	public AppUser() {
@@ -49,6 +49,15 @@ public class AppUser {
 		this.password = password;
 		this.firstname = firstname;
 		this.lastname = lastname;
+	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "AppUser [id=" + id + ", email=" + email + ", password=" + password + ", firstname=" + firstname
+				+ ", lastname=" + lastname + ", lastLogin=" + lastLogin + ", numberOfLoginFailed=" + numberOfLoginFailed
+				+ "]";
 	}
 
 	public String getEmail() {

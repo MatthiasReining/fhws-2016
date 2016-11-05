@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -20,13 +21,24 @@ public class EventLog {
 	private Date insertTime;
 
 	private String event;
-	
+
+	@ManyToOne
+	private AppUser appUser;
+
 	@PrePersist
 	public void perPersist() {
 		insertTime = new Date();
 	}
 	
 	
+
+	@Override
+	public String toString() {
+		return "EventLog [id=" + id + ", insertTime=" + insertTime + ", event=" + event + ", appUser=" + appUser + "]";
+	}
+
+
+
 	public long getId() {
 		return id;
 	}
@@ -49,6 +61,14 @@ public class EventLog {
 
 	public void setEvent(String event) {
 		this.event = event;
+	}
+
+	public AppUser getAppUser() {
+		return appUser;
+	}
+
+	public void setAppUser(AppUser appUser) {
+		this.appUser = appUser;
 	}
 
 }
