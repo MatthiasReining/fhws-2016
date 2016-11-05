@@ -1,0 +1,3 @@
+Insert into APPUSER (ID, EMAIL , PASSWORD, FIRSTNAME , LASTNAME, NUMBEROFLOGINFAILED   ) VALUES (1, 'mickey.mouse@disney.com', 'geheim', 'Mickey', 'Mouse', 0);
+Insert into APPUSER (ID, EMAIL , PASSWORD, FIRSTNAME , LASTNAME, NUMBEROFLOGINFAILED   ) VALUES (2, 'donald.duck@disney.com', 'geheim', 'Donald', 'Duck', 0);
+Insert into APPUSER (ID, EMAIL , PASSWORD, FIRSTNAME , LASTNAME, NUMBEROFLOGINFAILED   ) VALUES (3, 'agobert.duck@disney.com', 'geheim', 'Dagobert', 'Duck', 0);
