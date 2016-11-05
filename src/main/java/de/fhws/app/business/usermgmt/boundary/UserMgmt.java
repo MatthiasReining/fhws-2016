@@ -61,6 +61,14 @@ public class UserMgmt {
 	}
 
 	public void save(AppUser appUser) {
-		em.merge(appUser);
+		try {
+			tx.begin();
+
+			em.merge(appUser);
+			
+			tx.commit();
+		} catch (NotSupportedException | SystemException | SecurityException | IllegalStateException | RollbackException | HeuristicMixedException | HeuristicRollbackException e) {
+			throw new RuntimeException(e);
+		}
 	}
 }
