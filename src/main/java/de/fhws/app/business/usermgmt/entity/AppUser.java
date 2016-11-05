@@ -1,12 +1,15 @@
 package de.fhws.app.business.usermgmt.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -33,6 +36,10 @@ public class AppUser {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date lastLogin;
 	private int numberOfLoginFailed;
+	
+	@OneToMany
+	@JoinColumn(name="APPUSER_ID")
+	private List<EventLog> events;
 
 	public AppUser() {
 	}
@@ -100,4 +107,13 @@ public class AppUser {
 		this.numberOfLoginFailed = numberOfLoginFailed;
 	}
 
+	public List<EventLog> getEvents() {
+		return events;
+	}
+
+	public void setEvents(List<EventLog> events) {
+		this.events = events;
+	}
+
+	
 }

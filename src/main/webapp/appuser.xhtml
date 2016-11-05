@@ -67,6 +67,22 @@
 
 			</h:form>
 
+
+			<hr />
+
+
+			<h:dataTable value="#{appUserController.appUser.events}" var="event">
+				<h:column>
+					<h:outputText value="#{event.id}" />
+				</h:column>
+				<h:column>
+					<h:outputText value="#{event.insertTime}" />
+				</h:column>
+				<h:column>
+					<h:outputText value="#{event.event}" />
+				</h:column>
+			</h:dataTable>
+
 		</f:view>
 
 
