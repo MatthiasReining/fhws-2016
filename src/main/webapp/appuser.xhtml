@@ -5,6 +5,10 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	template="./WEB-INF/templates/template.xhtml">
 
+	<ui:define name="top">
+	User: #{appUserController.appUser.lastname}
+	</ui:define>
+
 	<ui:define name="content">
 
 		<f:view>
@@ -13,26 +17,52 @@
 			<h2>Benutzer #{appUserController.appUser.lastname}</h2>
 
 
-			<h:form>
 
-				Email
-				<h:inputText value="#{appUserController.appUser.email}" />
-				<br/>
-				password				
-				<h:inputText value="#{appUserController.appUser.password}" />
-				<br/>
-				firstname				
-				<h:inputText value="#{appUserController.appUser.firstname}" />
-				<br/>
-				lastname
-				<h:inputText value="#{appUserController.appUser.lastname}" />
-				<br/>
-				uuid 
-				#{appUserController.appUser.id}
-	
-				<hr/>
-				
-				<h:commandButton action="#{appUserController.save()}" value="save" />
+
+			<h:form class="form-horizontal">
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">ID</label>
+					<div class="col-sm-10">
+						<p class="form-control-static">#{appUserController.appUser.id}</p>
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Email</label>
+					<div class="col-sm-10">
+						<h:inputText class="form-control" placeholder="Email"
+							value="#{appUserController.appUser.email}" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Password</label>
+					<div class="col-sm-10">
+						<h:inputText class="form-control"
+							value="#{appUserController.appUser.password}" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">First name</label>
+					<div class="col-sm-10">
+						<h:inputText class="form-control"
+							value="#{appUserController.appUser.firstname}" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Last name</label>
+					<div class="col-sm-10">
+						<h:inputText class="form-control"
+							value="#{appUserController.appUser.lastname}" />
+					</div>
+				</div>
+
+				<h:commandButton class="btn btn-primary"
+					action="#{appUserController.save()}" value="save" />
 
 
 			</h:form>

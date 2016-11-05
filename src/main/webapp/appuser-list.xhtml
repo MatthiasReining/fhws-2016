@@ -5,6 +5,9 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	template="./WEB-INF/templates/template.xhtml">
 
+	<ui:define name="top">
+		User List
+	</ui:define>
 	<ui:define name="content">
 
 		<f:view>
@@ -15,7 +18,7 @@
 
 			<h:form>
 
-				<h:dataTable value="#{appUserListController.allUsers}" var="appUser">
+				<h:dataTable value="#{appUserListController.allUsers}" var="appUser" class="table table-hover">
 					<h:column>
 						<h:outputText value="#{appUser.firstname}" />
 					</h:column>
@@ -37,5 +40,4 @@
 
 
 	</ui:define>
-
 </ui:composition>

@@ -1,32 +1,67 @@
-<?xml version='1.0' encoding='UTF-8' ?> 
+<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
 
-    <h:head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-       
-        <title>Facelets Template</title>
-    </h:head>
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <h:body>
+	<title>FHWS App</title>
 
-        <div id="top">
-            FHWS App
-            <ui:insert name="top">Top</ui:insert>
-            <hr/>
-        </div>
 
-        <div id="content" class="center_content">
-            <ui:insert name="content">Content</ui:insert>
-        </div>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
-        <div id="bottom">
-            <hr/>
-            (c) by FHWS 2016
-        </div>
+	<!-- Optional theme -->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
 
-    </h:body>
+	<!-- Latest compiled and minified JavaScript -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</h:head>
+
+<h:body>
+
+	<div id="top" style="margin-bottom: 80px">
+		<nav class="navbar navbar-default navbar-fixed-top"> <!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+				aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">FHWS</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<p class="navbar-text"><ui:insert name="top">--</ui:insert></p>
+			
+		
+			<ul class="nav navbar-nav navbar-right" style="padding-right: 20px">
+					<p class="navbar-text">Signed in as #{loginController.currentUser.firstname} #{loginController.currentUser.lastname} </p>
+		
+			</ul>
+		</div>
+		<!-- /.navbar-collapse --> </nav>
+	</div>
+
+	<div id="content" class="container">
+		<ui:insert name="content">Content</ui:insert>
+	</div>
+
+	<div id="bottom">
+		<hr />
+		(c) by FHWS 2016
+	</div>
+
+</h:body>
 
 </html>
