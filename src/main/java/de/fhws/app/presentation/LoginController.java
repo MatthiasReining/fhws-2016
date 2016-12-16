@@ -33,7 +33,8 @@ public class LoginController implements Serializable {
 	private AppUser currentUser = null;
 	
 	@Produces @CurrentUser
-	public AppUser produceCurrentUser() {		
+	public AppUser produceCurrentUser() {	
+		System.out.println("in productCurrentUser");
 		return currentUser;
 	}
 
