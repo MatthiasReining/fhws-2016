@@ -1,6 +1,5 @@
 package de.fhws.app.business.batch.boundary;
 
-import javax.ejb.Schedule;
 import javax.ejb.Singleton;
 
 @Singleton
