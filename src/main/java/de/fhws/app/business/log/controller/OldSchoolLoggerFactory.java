@@ -2,7 +2,7 @@ package de.fhws.app.business.log.controller;
 
 import de.fhws.app.business.log.boundary.FHWSLogger;
 
-public class LoggerFactory {
+public class OldSchoolLoggerFactory {
 	
 	//public static FHWSLogger getDBLogger() {
 	//	return new DBLogger();

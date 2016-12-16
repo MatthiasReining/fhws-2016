@@ -11,6 +11,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import de.fhws.app.business.log.controller.DBLogger;
+import de.fhws.app.business.performance.boundary.PerformanceLogger;
 import de.fhws.app.business.usermgmt.boundary.CurrentUser;
 import de.fhws.app.business.usermgmt.boundary.UserMgmt;
 import de.fhws.app.business.usermgmt.entity.AppUser;
@@ -38,6 +39,7 @@ public class LoginController implements Serializable {
 		return currentUser;
 	}
 
+	@PerformanceLogger
 	public String login() {
 		System.out.println("in login");
 		

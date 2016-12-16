@@ -5,9 +5,12 @@ import java.util.Date;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.enterprise.event.Event;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import de.fhws.app.business.news.boundary.NewLogin;
 import de.fhws.app.business.usermgmt.entity.AppUser;
 import de.fhws.app.business.usermgmt.entity.EventLog;
 
@@ -16,6 +19,10 @@ public class UserMgmt {
 
 	@PersistenceContext
 	EntityManager em;
+	
+	@Inject
+	@NewLogin
+	Event<String> newsEvent;
 
 	public AppUser getUserByEmail(String email) {
 		AppUser au = em.createNamedQuery(AppUser.findByEMail, AppUser.class).setParameter(AppUser.paramEMail, email)
@@ -35,6 +42,8 @@ public class UserMgmt {
 
 		dbUser.setNumberOfLoginFailed(0);
 		dbUser.setLastLogin(new Date());
+		
+		newsEvent.fire(email + " logged in successful");
 
 		EventLog el = new EventLog();
 		el.setEvent("LOGIN");
