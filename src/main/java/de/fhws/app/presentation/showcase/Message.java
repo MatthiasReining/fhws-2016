@@ -3,9 +3,10 @@ package de.fhws.app.presentation.showcase;
 import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
-//@RequestScoped //see different behaviour
+@RequestScoped //see different behaviour
 //@Dependent //see different behaviour
 public class Message implements Serializable {
 

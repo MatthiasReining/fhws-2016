@@ -23,7 +23,11 @@ public class CDIServlet2 extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.getWriter().println(m.getMessage());
-		resp.getWriter().println(m2.getMessage());		
+		resp.getWriter().println(m2.getMessage());	
+		
+		m.setMessage("blub");
+		
+		resp.getWriter().println(m2.getMessage());
 	}
 
 }
