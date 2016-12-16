@@ -4,10 +4,14 @@ import java.io.Serializable;
 
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
+import javax.enterprise.inject.Produces;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import javax.inject.Named;
 
+import de.fhws.app.business.log.controller.DBLogger;
+import de.fhws.app.business.usermgmt.boundary.CurrentUser;
 import de.fhws.app.business.usermgmt.boundary.UserMgmt;
 import de.fhws.app.business.usermgmt.entity.AppUser;
 
@@ -18,19 +22,33 @@ public class LoginController implements Serializable {
 
 	@EJB
 	UserMgmt um;
+	
+	@Inject
+	DBLogger logger;
 
 	
 	private String email;
 	private String password;
 	
 	private AppUser currentUser = null;
+	
+	@Produces @CurrentUser
+	public AppUser produceCurrentUser() {		
+		return currentUser;
+	}
 
 	public String login() {
 		System.out.println("in login");
+		
+		
 
 		AppUser au = um.login(email, password);
 		if (au != null) {
 			currentUser = au;
+			
+			logger.log(" logged in");
+			
+			
 			return "appuser-list?faces-redirect=true";
 		}
 
