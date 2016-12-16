@@ -1,9 +1,11 @@
 package de.fhws.app.presentation;
 
-import javax.faces.bean.ManagedBean;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
 import javax.validation.constraints.Size;
 
-@ManagedBean
+@Named
+@RequestScoped
 public class SampleController {
 	
 	@Size(min=3, max=10)

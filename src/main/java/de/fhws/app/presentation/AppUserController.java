@@ -1,15 +1,19 @@
 package de.fhws.app.presentation;
 
+import java.io.Serializable;
+
 import javax.ejb.EJB;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
 
 import de.fhws.app.business.usermgmt.boundary.UserMgmt;
 import de.fhws.app.business.usermgmt.entity.AppUser;
 
-@ManagedBean
+@Named
 @SessionScoped
-public class AppUserController {
+public class AppUserController implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
 
 	@EJB
 	UserMgmt um;
