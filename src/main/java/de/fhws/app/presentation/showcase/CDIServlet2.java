@@ -16,11 +16,14 @@ public class CDIServlet2 extends HttpServlet {
 	@Inject
 	Message m;
 	
+
+	@Inject
+	Message m2;
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 		resp.getWriter().println(m.getMessage());
-		
+		resp.getWriter().println(m2.getMessage());		
 	}
 
 }

@@ -3,9 +3,9 @@ package de.fhws.app.presentation.showcase;
 import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
 
-@SessionScoped
+//@RequestScoped //see different behaviour
+//@Dependent //see different behaviour
 public class Message implements Serializable {
 
 	private static final long serialVersionUID = 1L;
