@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl"> 
+
+<p>Today's welcome message is:</p>
+
+<h1>{{data.msg}}</h1>
+
+msg: <input type="text" ng-model="data.msg"> <br>
+k1: <input type="text" ng-model="data.d1.k1">
+
+<input type="button" ng-click="change()" value="change">
+<input type="button" ng-click="loadUsers()" value="load users">
+
+<table>
+<tr ng-repeat="user in users">
+	<td>{{user.firstname}}</td>
+	<td>{{user.lastname}}</td>
+	<td>{{user.email}}</td>
+</tr>
+</table>
+
+<h3>change user id 2</h3>
+
+firstname <input type="text" ng-model="currentUser.firstname"> <br>
+lastname <input type="text" ng-model="currentUser.lastname"> <br>
+<input type="button" ng-click="save()" value="save">
+<hr>
+
+
+<h3>Current Users</h3>
+<hr>
+<pre>
+{{currentUser | json}}
+</pre>
+
+<h3>Users</h3>
+<pre>
+{{users | json}}
+</pre>
+
+<hr>
+<pre>
+{{data | json}}
+</pre>
+</div>
+
+<p>The $http service requests a page on the server, and the response is set as the value of the "myWelcome" variable.</p>
+
+<script>
+
+var app = angular.module('myApp', []);
+
+
+app.controller('myCtrl', function($scope, $http) {
+
+	$scope.data = {};
+	$scope.data.msg = "blub";
+	$scope.data.list = ['value1', 'value2'];
+	$scope.data.d1 = { 'k1': 'v2' };
+
+	$scope.currentUser = {};
+
+	$scope.change = function() {
+		$scope.data.d1.k1 = new Date();
+	};
+
+	$scope.loadUsers = function() {
+
+		$http.get('http://localhost:8080/fhws-2016/resources/users')
+		  .then(function(response) {
+			  console.log(response);
+		      $scope.users = response.data;
+
+		      $scope.currentUser = $scope.users[1];
+		  });	  
+	};
+
+	$scope.save = function() {
+
+		$http.put('http://localhost:8080/fhws-2016/resources/users/2', $scope.currentUser)
+		  .then(function(response) {
+			  console.log(response);
+		  });	  
+	};
+	
+  
+	
+});
+
+</script>
+
+</body>
+</html>
