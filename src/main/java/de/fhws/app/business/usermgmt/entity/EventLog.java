@@ -9,6 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.xml.bind.annotation.XmlTransient;
 
 @Entity
 public class EventLog {
@@ -22,6 +23,7 @@ public class EventLog {
 
 	private String event;
 
+	
 	@ManyToOne
 	private AppUser appUser;
 
@@ -63,6 +65,7 @@ public class EventLog {
 		this.event = event;
 	}
 
+	@XmlTransient
 	public AppUser getAppUser() {
 		return appUser;
 	}
