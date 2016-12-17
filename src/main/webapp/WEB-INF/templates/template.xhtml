@@ -56,7 +56,41 @@
 	<div id="content" class="container">
 		<ui:insert name="content">Content</ui:insert>
 	</div>
+	
+	<hr/>
+	<h3>Chat</h3>
+	
+	<div id="chat">
+	</div>
+	
+	<script languge="JavaScript">
 
+	 var webSocket = new WebSocket('ws://localhost:8080/fhws-2016/chat');
+
+     webSocket.onerror = function (event) {
+         alert(event.data);
+     };
+
+     webSocket.onopen = function (event) {
+         document.getElementById('chat').innerHTML
+                 = 'Connection established';
+     };
+
+     webSocket.onmessage = function (event) {
+         document.getElementById('chat').innerHTML
+                 += '<br />Received message: ' + event.data;
+     };
+
+     function sendMsg() {
+         var msg = document.getElementById("newMsg").value;
+         webSocket.send(msg);
+     };
+
+	</script>
+	
+	Message: <input type="text" id="newMsg"/> <input type="button" onclick="sendMsg()" value="send"/>
+	<hr/>
+	
 	<div id="bottom">
 		<hr />
 		(c) by FHWS 2016
