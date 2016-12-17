@@ -13,12 +13,14 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @NamedQueries({ 
 	@NamedQuery(name = AppUser.findAll, query = "SELECT a FROM AppUser a"),
 	@NamedQuery(name = AppUser.findByEMail, query = "SELECT a FROM AppUser a WHERE a.email = :" + AppUser.paramEMail) 
 })
+@XmlRootElement
 public class AppUser {
 
 	public static final String findAll = "AppUser.findAll";
