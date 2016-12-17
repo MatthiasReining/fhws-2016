@@ -29,6 +29,11 @@ public class UserMgmt {
 				.getSingleResult();
 		return au;
 	}
+	
+	public AppUser getUserById(long id) {
+		AppUser au = em.find(AppUser.class, id);
+		return au;
+	}
 
 	public AppUser login(String email, String password) {
 		AppUser dbUser = getUserByEmail(email);
